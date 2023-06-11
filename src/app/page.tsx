@@ -1,6 +1,5 @@
+import Main from '@/components/Main';
 import moment from 'moment';
-import Main from '@/components/Main'
-import styles from './page.module.css'
 
 export default function Home() {
   const dateOfBirth = moment().diff(process.env.DATE_OF_BIRTH, 'years');
@@ -8,17 +7,14 @@ export default function Home() {
   const yearsWorkingAsPJ = Math.floor(diffWorkingAsPJ / 12);
   const monthsWorkingAsPJ = diffWorkingAsPJ % 12;
 
-  console.log(yearsWorkingAsPJ);
-  console.log(monthsWorkingAsPJ);
-
   return (
     <Main>
       <div>
         <div>
-          <h2>Oi, sou {process.env.NAME}</h2>
+          <h2 className='text-2xl font-bold'>Oi, sou {process.env.NAME}</h2>
         </div>
         <div>
-          <h1 className={styles.title}>Fullstack <br /> Developer</h1>
+          <h1 className='text-7xl font-bold'>Fullstack <br /> Developer</h1>
         </div>
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
           <div></div>
