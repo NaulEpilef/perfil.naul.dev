@@ -1,4 +1,5 @@
 import moment from 'moment';
+import Main from '@/components/Main'
 import styles from './page.module.css'
 
 export default function Home() {
@@ -11,7 +12,7 @@ export default function Home() {
   console.log(monthsWorkingAsPJ);
 
   return (
-    <main className={styles.main}>
+    <Main>
       <div>
         <div>
           <h2>Oi, sou {process.env.NAME}</h2>
@@ -28,6 +29,6 @@ export default function Home() {
           </p>
         </div>
       </div>
-    </main>
+    </Main>
   )
 }

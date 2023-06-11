@@ -5,6 +5,7 @@ const MainStyled = styled.main`
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
 `;
 
 export { MainStyled };
