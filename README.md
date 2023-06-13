@@ -5,7 +5,7 @@ This is a small project that I'm working on. [naul.dev](https://naul.dev) serves
 ## Summary
 
 - [Visit online](#visit-online)
-- [How to install](#how-to-install)
+- [Run locally](#run-locally)
 
 ## Visit online
 
