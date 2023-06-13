@@ -33,7 +33,13 @@ export default function Home() {
           <h3 className='text-2xl font-medium'>Contato</h3>
           <ul>
             <li>
-              <a href="mailto:contato@naul.dev">contato@naul.dev</a>
+              <a
+                href="mailto:contato@naul.dev"
+                target='_blank'
+                className='max-lg:min-h-full max-lg:block max-lg:leading-10'
+              >
+                contato@naul.dev
+              </a>
             </li>
           </ul>
         </div>
@@ -41,7 +47,13 @@ export default function Home() {
           <h3 className='text-2xl font-medium'>Projetos</h3>
           <ul>
             <li>
-              <a href="https://naul.dev" target='_blank'>naul.dev</a>
+              <a
+                href="https://naul.dev"
+                target='_blank'
+                className='max-lg:min-h-full max-lg:block max-lg:leading-10'
+              >
+                naul.dev
+              </a>
             </li>
           </ul>
         </div>
@@ -49,10 +61,22 @@ export default function Home() {
           <h3 className='text-2xl font-medium'>Redes</h3>
           <ul>
             <li>
-              <a href="https://www.linkedin.com/in/luanfps" target='_blank'>Linkedin</a>
+              <a
+                href="https://www.linkedin.com/in/luanfps"
+                target='_blank'
+                className='max-lg:min-h-full max-lg:block max-lg:leading-10'
+              >
+                Linkedin
+              </a>
             </li>
             <li>
-              <a href="https://github.com/NaulEpilef" target='_blank'>Github</a>
+              <a
+                href="https://github.com/NaulEpilef"
+                target='_blank'
+                className='max-lg:min-h-full max-lg:block max-lg:leading-10'
+              >
+                Github
+              </a>
             </li>
           </ul>
         </div>
