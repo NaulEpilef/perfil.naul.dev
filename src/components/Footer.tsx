@@ -6,7 +6,7 @@ interface IFooter {
 
 const Footer = ({ children }: IFooter) => {
 	return (
-		<footer className='flex flex-row justify-around items-center h-60'>
+		<footer className='flex flex-row justify-around items-center h-60 bg-secondary'>
 			{children}
 		</footer>
 	)
