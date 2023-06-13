@@ -13,7 +13,7 @@ export default function Home() {
       <Main>
         <div>
           <div>
-            <h2 className='text-2xl font-bold'>Oi, sou {process.env.NAME}</h2>
+            <span className='text-2xl font-bold'>Oi, sou {process.env.NAME}</span>
           </div>
           <div>
             <h1 className='text-7xl font-bold'>Fullstack <br /> Developer</h1>
@@ -31,30 +31,30 @@ export default function Home() {
       <Footer>
         <div>
           <h3 className='text-2xl font-medium'>Contato</h3>
-          <li className='list-none'>
-            <ul>
+          <ul>
+            <li>
               <a href="mailto:contato@naul.dev">contato@naul.dev</a>
-            </ul>
-          </li>
+            </li>
+          </ul>
         </div>
         <div>
           <h3 className='text-2xl font-medium'>Projetos</h3>
-          <li className='list-none'>
-            <ul>
-              <a href="http://naul.dev" target='_blank'>naul.dev</a>
-            </ul>
-          </li>
+          <ul>
+            <li>
+              <a href="https://naul.dev" target='_blank'>naul.dev</a>
+            </li>
+          </ul>
         </div>
         <div>
           <h3 className='text-2xl font-medium'>Redes</h3>
-          <li className='list-none'>
-            <ul>
-              <a href="https://www.linkedin.com/in/luanfps/" target='_blank'>Linkedin</a>
-            </ul>
-            <ul>
+          <ul>
+            <li>
+              <a href="https://www.linkedin.com/in/luanfps" target='_blank'>Linkedin</a>
+            </li>
+            <li>
               <a href="https://github.com/NaulEpilef" target='_blank'>Github</a>
-            </ul>
-          </li>
+            </li>
+          </ul>
         </div>
       </Footer>
     </>
