@@ -30,7 +30,7 @@ export default function Home() {
       </Main>
       <Footer>
         <div>
-          <h3 className='text-2xl font-medium'>Contato</h3>
+          <span className='text-2xl font-medium'>Contato</span>
           <ul>
             <li>
               <a
@@ -44,7 +44,7 @@ export default function Home() {
           </ul>
         </div>
         <div>
-          <h3 className='text-2xl font-medium'>Projetos</h3>
+          <span className='text-2xl font-medium'>Projetos</span>
           <ul>
             <li>
               <a
@@ -58,7 +58,7 @@ export default function Home() {
           </ul>
         </div>
         <div>
-          <h3 className='text-2xl font-medium'>Redes</h3>
+          <span className='text-2xl font-medium'>Redes</span>
           <ul>
             <li>
               <a
