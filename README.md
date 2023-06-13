@@ -1,30 +1,37 @@
 # naul.dev
 
+This is a small project that I'm working on. [naul.dev](https://naul.dev) serves as a personal portfolio website and more. It showcases my curriculum vitae, projects, and additional information about me.
+
+## Summary
+
+- [Visit online](#visit-online)
+- [How to install](#how-to-install)
+
 ## Visit online
 
-Access  the website [here](https://naul.dev)
+Access the website [here](https://naul.dev).
 
-## How to install
+## Run locally
 
-1. Clone the repository using the command bellow:
+Clone the project
 
 ```bash
 git clone https://github.com/NaulEpilef/naul.dev.git
 ```
 
-2. Navigate to the project directory:
+Go to the project directory
 
 ```bash
 cd naul.dev
 ```
 
-3. Install the project dependecies using npm:
+Install dependencies
 
 ```bash
 npm install
 ```
 
-4. Start the development server using npm:
+Start server
 
 ```bash
 npm run dev
