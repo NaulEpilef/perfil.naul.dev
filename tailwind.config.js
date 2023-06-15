@@ -25,7 +25,6 @@ module.exports = {
         '0%': {
           transform: 'scale(0)',
           opacity: 1,
-          // border: '8px',
         },
         '50%': {
           opacity: 0.8,
@@ -33,7 +32,6 @@ module.exports = {
         '100%': {
           transform: 'scale(1)',
           opacity: 0,
-          // border: '16px',
         },
       },
     },

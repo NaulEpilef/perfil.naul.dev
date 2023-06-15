@@ -5,23 +5,36 @@ interface IButtonGenius {
 	color: string;
 }
 
+interface IWave {
+	id: number;
+}
+
 const ButtonGenius = ({ color }: IButtonGenius) => {
-	const [activeAnimation, setActiveAnimation] = useState<boolean>(false);
-	const [opacity, setOpacity] = useState<string>('border-opacity-0');
+  const [waves, setWaves] = useState<IWave[]>([]);
+	const [count, setCount] = useState<number>(0);
 
-	const handleClick = () => {
-		setOpacity('border-opacity-30');
-		setActiveAnimation(true);
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    const newWave: IWave = { id: count };
+		setCount(count + 1);
+    setWaves([...waves, newWave]);
 
-		setTimeout(() => {
-			setOpacity('border-opacity-0');
-			setActiveAnimation(false);
-		}, 1000);
-	}
+    setTimeout(() => {
+			setWaves((prevWaves) => {
+				const wavesAfterFilter = prevWaves.filter(wave => wave.id !== newWave.id);
+				if (wavesAfterFilter.length == 0) setCount(0);
+				return wavesAfterFilter;
+			});
+    }, 1000);
+  };
 
 	return (
-		<button className={`flex justify-center items-center h-24 w-24 ${color}`} onClick={handleClick}>
-			<div className={`min-h-full min-w-full rounded-full border-8 border-white ${opacity} ${activeAnimation ? 'animate-buttonGenius' : ''}`}></div>
+		<button className={`flex justify-center items-center h-52 w-52 ${color}`} onClick={handleClick}>
+			{waves.map((wave, index) => (
+				<div
+					key={index}
+					className={`absolute h-52 w-52 rounded-full border-8 border-white border-opacity-30 animate-buttonGenius`}
+				/>
+			))}
 		</button>
 	);
 }
