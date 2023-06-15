@@ -3,6 +3,7 @@ import { useState } from "react";
 
 interface IButtonGenius {
 	id: string;
+	ariaLabel: string;
 	color: string;
 }
 
@@ -10,7 +11,7 @@ interface IWave {
 	id: number;
 }
 
-const ButtonGenius = ({ id, color }: IButtonGenius) => {
+const ButtonGenius = ({ id, ariaLabel, color }: IButtonGenius) => {
   const [waves, setWaves] = useState<IWave[]>([]);
 	const [count, setCount] = useState<number>(0);
 
@@ -29,7 +30,7 @@ const ButtonGenius = ({ id, color }: IButtonGenius) => {
   };
 
 	return (
-		<button id={id} className={`flex justify-center items-center h-52 w-52 ${color}`} onClick={handleClick}>
+		<button id={id} aria-label={ariaLabel} className={`flex justify-center items-center h-52 w-52 ${color}`} onClick={handleClick}>
 			{waves.map((wave, index) => (
 				<div
 					key={index}
