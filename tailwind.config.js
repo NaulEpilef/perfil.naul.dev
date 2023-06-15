@@ -20,6 +20,26 @@ module.exports = {
         'accent': '#df5601',
       },
     },
+    keyframes: {
+      'expand': {
+        '0%': {
+          transform: 'translate(-50%, -50%) scale(0)',
+          opacity: 1,
+          // border: '8px',
+        },
+        '50%': {
+          opacity: 0.8,
+        },
+        '100%': {
+          transform: 'translate(-50%, -50%) scale(1)',
+          opacity: 0,
+          // border: '16px',
+        },
+      },
+    },
+    animation: {
+      'buttonGenius': 'expand 1s linear infinite',
+    },
   },
   plugins: [],
 }
