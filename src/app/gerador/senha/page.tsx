@@ -1,6 +1,6 @@
 'use client'
 import Main from "@/components/Main";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const password = () => {
 	const allLettersLowerCase = "abcdefghijklmnopqrstuvwxyz";
@@ -19,7 +19,7 @@ const password = () => {
 
 	useEffect(() => {
 		handleClick()
-	}, []);
+	}, [canLettersLowerCase, canLettersUpperCase, canNumbers, canSpecialsCharacters, amountCharacters]);
 
 	const handleClick = () => {
 		const newPass: string[] = [];
@@ -43,7 +43,7 @@ const password = () => {
 			<div>
 				<h1>Gerador de senha</h1>
 				<br />
-				<h1>{passwordGenerated}</h1>
+				<span>{passwordGenerated}</span>
 				<br />
 				<input type="number" value={amountCharacters} onChange={(event) => setAmountCharacters(+event.target.value)} />
 				<br />
