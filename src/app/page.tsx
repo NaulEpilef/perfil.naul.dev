@@ -1,6 +1,7 @@
 import Footer from '@/components/Footer';
 import Main from '@/components/Main';
 import moment from 'moment';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function Home() {
   const dateOfBirth = moment().diff(process.env.DATE_OF_BIRTH, 'years');
@@ -81,6 +82,7 @@ export default function Home() {
           </ul>
         </div>
       </Footer>
+      <Analytics />
     </>
   )
 }
