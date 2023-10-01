@@ -3,6 +3,7 @@ import Main from "@/components/Main";
 import { useEffect, useState } from "react";
 import * as Tweakpane from 'tweakpane';
 import { Slider } from "@mui/material";
+import { Analytics } from '@vercel/analytics/react';
 
 const KaledoscopeRandom = () => {
     const [imageUrl, setImageUrl] = useState<string>("https://upload.wikimedia.org/wikipedia/pt/2/23/Cuca.png");
@@ -124,16 +125,19 @@ const KaledoscopeRandom = () => {
     }
 
 	return (
-		<Main>
-            <div className="flex flex-col items-center">
-                <h1 className="font-bold text-5xl">Kaleidoscópio</h1>
-                <input type="text" placeholder="Link da imagem" onChange={e => setImageUrl(e.target.value)} value={imageUrl} />
-                <input type="number" placeholder="30" onChange={e => setNumSegments(parseInt(e.target.value))} value={numSegments} />
-                <Slider onChange={handleChangeEase} valueLabelDisplay="on" step={0.001} min={0.001} max={1} className="w-1/2" />
-                <input type="checkbox" name="isRandom" onChange={e => setIsRandom(e.target.checked)} />
-                <canvas className="w-9/12 cursor-none" id="canvas"></canvas>
-            </div>
-		</Main>
+        <>
+            <Main>
+                <div className="flex flex-col items-center">
+                    <h1 className="font-bold text-5xl">Kaleidoscópio</h1>
+                    <input type="text" placeholder="Link da imagem" onChange={e => setImageUrl(e.target.value)} value={imageUrl} />
+                    <input type="number" placeholder="30" onChange={e => setNumSegments(parseInt(e.target.value))} value={numSegments} />
+                    <Slider onChange={handleChangeEase} valueLabelDisplay="on" step={0.001} min={0.001} max={1} className="w-1/2" />
+                    <input type="checkbox" name="isRandom" onChange={e => setIsRandom(e.target.checked)} />
+                    <canvas className="w-9/12 cursor-none" id="canvas"></canvas>
+                </div>
+            </Main>
+            <Analytics />
+        </>
 	);
 }
 
