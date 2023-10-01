@@ -1,11 +1,14 @@
 'use client'
 import Main from "@/components/Main";
 import { useEffect, useState } from "react";
+import CurrencyInput from "react-currency-input-field";
 import * as Tweakpane from 'tweakpane';
+import { Slider } from "@mui/material";
 
 const KaledoscopeRandom = () => {
     const [imageUrl, setImageUrl] = useState<string>("https://upload.wikimedia.org/wikipedia/pt/2/23/Cuca.png");
     const [numSegments, setNumSegments] = useState<number>(30);
+    const [ease, setEase] = useState<number>(.01);
 
     useEffect(() => {
         // https://optical.toys/kaleidoscope/
@@ -20,7 +23,7 @@ const KaledoscopeRandom = () => {
         let mouseY = 0;
         let targetX = 0;
         let targetY = 0;
-        const ease = .1;
+        // const ease = .01;
         let radius = Math.max(window.innerWidth,window.innerHeight);
         function draw(c: number, d: number) {
             ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -58,13 +61,13 @@ const KaledoscopeRandom = () => {
             mouseX += (targetX-mouseX) * ease;
             mouseY += (targetY-mouseY) * ease;
             draw(canvas.width/2, canvas.height/2);
-            requestAnimationFrame(animate)
+            requestAnimationFrame(animate);
         }
 
         window.addEventListener('resize',resizeCanvas);
         canvas.addEventListener('mousemove', a => {
-            targetX=a.clientX;
-            targetY=a.clientY
+            targetX = a.clientX;
+            targetY = a.clientY;
         });
 
         canvas.addEventListener('drop', a => {
@@ -102,7 +105,13 @@ const KaledoscopeRandom = () => {
                 setNumSegments(a.value)
             });
         }
-    }, [imageUrl, numSegments]);
+    }, [imageUrl, numSegments, ease]);
+
+    const handleChangeEase = (e: Event) => {
+        const { target } = e;
+        if (target) 
+            setEase(Number((target as HTMLButtonElement).value));
+    }
 
 	return (
 		<Main>
@@ -110,6 +119,7 @@ const KaledoscopeRandom = () => {
                 <h1 className="font-bold text-5xl">Kaleidoscópio</h1>
                 <input type="text" placeholder="Link da imagem" onChange={e => setImageUrl(e.target.value)} value={imageUrl} />
                 <input type="number" placeholder="30" onChange={e => setNumSegments(parseInt(e.target.value))} value={numSegments} />
+                <Slider onChange={handleChangeEase} valueLabelDisplay="on" step={0.01} min={0.01} max={1} className="w-1/2" />
                 <canvas className="w-9/12" id="canvas"></canvas>
             </div>
 		</Main>
